@@ -293,8 +293,7 @@ def create_evaluation_dataset(config: Config, dataset_path: str) -> DataLoader:
     """
     # Initialize dataset processor
     processor = DatasetProcessor(
-        tokenizer_path=config.data.tokenizer_path,
-        max_seq_length=config.data.max_seq_length,
+        tokenizer=config.data.tokenizer_path,
         config=config.data
     )
     

@@ -9,3 +9,5 @@ venv
 ./mamba_training/inference/__pycache__/*
 
 ./tests/__pycache__*
+
+*.pem

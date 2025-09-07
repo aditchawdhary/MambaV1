@@ -10,6 +10,8 @@ This script provides a command-line interface for training Mamba models with:
 """
 
 import os
+# Set environment variable to avoid tokenizer fork warnings
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 import sys
 import argparse
 import logging
@@ -19,7 +21,6 @@ from typing import Optional, Dict, Any
 
 import torch
 import torch.distributed as dist
-from torch.utils.data import random_split
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -136,26 +137,31 @@ def create_datasets(config: Config, distributed_info: Dict[str, int]):
     
     # Initialize dataset processor
     processor = DatasetProcessor(
-        tokenizer_path=config.data.tokenizer_path,
-        max_seq_length=config.data.max_seq_length,
-        config=config.data
+        config.data.tokenizer_path,
+        config.data
     )
     
     # Process dataset
     dataset = processor.process_dataset(config.data.dataset_path)
     
-    # Split into train/validation
+    # Split samples into train/validation before creating datasets
     total_size = len(dataset)
     train_size = int(config.data.train_split * total_size)
-    val_size = total_size - train_size
     
-    train_dataset, val_dataset = random_split(
-        dataset, 
-        [train_size, val_size],
-        generator=torch.Generator().manual_seed(config.seed)
-    )
+    # Shuffle samples for random split
+    import random
+    random.seed(config.seed)
+    random.shuffle(dataset)
     
-    logging.info(f"Created datasets: train={len(train_dataset)}, val={len(val_dataset)}")
+    train_samples = dataset[:train_size]
+    val_samples = dataset[train_size:]
+    
+    # Create datasets
+    from mamba_training.data.dataset_processor import ProcessedDataset
+    train_dataset = ProcessedDataset(train_samples)
+    val_dataset = ProcessedDataset(val_samples) if val_samples else None
+    
+    logging.info(f"Created datasets: train={len(train_dataset)}, val={len(val_dataset) if val_dataset else 0}")
     
     return train_dataset, val_dataset
 
@@ -350,6 +356,7 @@ def main():
             train_dataset=train_dataset,
             val_dataset=val_dataset,
             config=config.data,
+            batch_size=config.training.batch_size,
             distributed=distributed_info['is_distributed']
         )
         

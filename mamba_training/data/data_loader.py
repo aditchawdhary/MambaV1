@@ -503,6 +503,7 @@ class MambaDataLoader:
 def create_data_loaders(train_dataset: Dataset,
                        val_dataset: Optional[Dataset],
                        config: DataConfig,
+                       batch_size: int,
                        distributed: bool = False) -> Tuple[MambaDataLoader, Optional[MambaDataLoader]]:
     """Create train and validation data loaders.
     
@@ -510,6 +511,7 @@ def create_data_loaders(train_dataset: Dataset,
         train_dataset: Training dataset
         val_dataset: Validation dataset (optional)
         config: Data configuration
+        batch_size: Training batch size
         distributed: Whether to use distributed training
         
     Returns:
@@ -519,6 +521,7 @@ def create_data_loaders(train_dataset: Dataset,
     train_loader = MambaDataLoader(
         dataset=train_dataset,
         config=config,
+        batch_size=batch_size,
         shuffle=True,
         use_sequence_packing=True,
         distributed=distributed,
@@ -531,6 +534,7 @@ def create_data_loaders(train_dataset: Dataset,
         val_loader = MambaDataLoader(
             dataset=val_dataset,
             config=config,
+            batch_size=batch_size,
             shuffle=False,
             use_sequence_packing=False,  # Don't pack validation data
             distributed=distributed,

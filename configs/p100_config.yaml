@@ -1,0 +1,36 @@
+experiment_name: "p100_training"
+output_dir: "outputs"
+log_level: "INFO"
+seed: 42
+
+model:
+  d_model: 256  # Extremely small model dimension
+  d_state: 8
+  d_conv: 4
+  expand: 2
+  n_layers: 6  # Very few layers
+  vocab_size: 50257  # GPT-2 vocab size
+  pad_token_id: 50256
+
+training:
+  batch_size: 1  # Minimal batch size for P100s
+  gradient_accumulation_steps: 64  # Higher accumulation for effective batch size
+  learning_rate: 0.0001
+  weight_decay: 0.1
+  max_grad_norm: 1.0
+  num_epochs: 3
+  warmup_steps: 1000
+  save_steps: 1000
+  eval_steps: 500
+  use_mixed_precision: true
+  gradient_checkpointing: true  # Enable to save memory
+
+data:
+  max_seq_length: 128  # Extremely small sequence length for P100s
+  tokenizer_path: "gpt2"
+  dataset_path: "data/train.txt"
+  num_workers: 4
+  preprocessing_batch_size: 1000
+  train_split: 0.9
+  val_split: 0.1
+  shuffle_data: true
