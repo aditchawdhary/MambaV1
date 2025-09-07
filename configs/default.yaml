@@ -1,0 +1,36 @@
+experiment_name: "mamba_default_experiment"
+output_dir: "outputs"
+log_level: "INFO"
+seed: 42
+
+model:
+  d_model: 2048
+  d_state: 16
+  d_conv: 4
+  expand: 2
+  n_layers: 24
+  vocab_size: 50280
+  pad_token_id: 0
+
+training:
+  batch_size: 32
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001
+  weight_decay: 0.1
+  max_grad_norm: 1.0
+  num_epochs: 3
+  warmup_steps: 1000
+  save_steps: 1000
+  eval_steps: 500
+  use_mixed_precision: true
+  gradient_checkpointing: false
+
+data:
+  max_seq_length: 2048
+  tokenizer_path: "tokenizer.model"
+  dataset_path: "data/"
+  num_workers: 4
+  preprocessing_batch_size: 1000
+  train_split: 0.9
+  val_split: 0.1
+  shuffle_data: true

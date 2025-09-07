@@ -1,0 +1,11 @@
+.pytest_cache
+
+venv
+
+**.pyc
+
+
+./mamba_training/training/__pycache__/*
+./mamba_training/inference/__pycache__/*
+
+./tests/__pycache__*
