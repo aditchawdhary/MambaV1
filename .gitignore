@@ -10,4 +10,5 @@ venv
 
 ./tests/__pycache__*
 
-*.pem
+*.pemdata/train.txt
+data/validation.txt
