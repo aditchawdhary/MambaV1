@@ -12,3 +12,5 @@ venv
 
 *.pemdata/train.txt
 data/validation.txt
+data/train.txt
+data/validation.txt
