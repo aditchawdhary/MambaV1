@@ -1,0 +1,132 @@
+[Rank 1] 2025-09-07 14:24:29,233 - root - INFO - Creating datasets...
+[Rank 1] 2025-09-07 14:24:29,619 - mamba_training.data.dataset_processor - INFO - Initialized DatasetProcessor with tokenizer vocab size: 50257
+[Rank 1] 2025-09-07 14:24:29,619 - mamba_training.data.dataset_processor - INFO - Processing dataset: data/train.txt
+[Rank 1] 2025-09-07 14:24:43,179 - mamba_training.data.dataset_processor - INFO - Processed 10000/1165029 samples, kept 9622 after filtering
+[Rank 1] 2025-09-07 14:24:46,947 - mamba_training.data.dataset_processor - INFO - Processed 20000/1165029 samples, kept 19231 after filtering
+[Rank 1] 2025-09-07 14:24:51,010 - mamba_training.data.dataset_processor - INFO - Processed 30000/1165029 samples, kept 28968 after filtering
+[Rank 1] 2025-09-07 14:24:54,322 - mamba_training.data.dataset_processor - INFO - Processed 40000/1165029 samples, kept 38465 after filtering
+[Rank 1] 2025-09-07 14:24:58,321 - mamba_training.data.dataset_processor - INFO - Processed 50000/1165029 samples, kept 48076 after filtering
+[Rank 1] 2025-09-07 14:25:01,875 - mamba_training.data.dataset_processor - INFO - Processed 60000/1165029 samples, kept 57640 after filtering
+[Rank 1] 2025-09-07 14:25:05,475 - mamba_training.data.dataset_processor - INFO - Processed 70000/1165029 samples, kept 67228 after filtering
+[Rank 1] 2025-09-07 14:25:09,662 - mamba_training.data.dataset_processor - INFO - Processed 80000/1165029 samples, kept 76793 after filtering
+[Rank 1] 2025-09-07 14:25:13,188 - mamba_training.data.dataset_processor - INFO - Processed 90000/1165029 samples, kept 86394 after filtering
+[Rank 1] 2025-09-07 14:25:16,868 - mamba_training.data.dataset_processor - INFO - Processed 100000/1165029 samples, kept 95979 after filtering
+[Rank 1] 2025-09-07 14:25:20,545 - mamba_training.data.dataset_processor - INFO - Processed 110000/1165029 samples, kept 105635 after filtering
+[Rank 1] 2025-09-07 14:25:25,120 - mamba_training.data.dataset_processor - INFO - Processed 120000/1165029 samples, kept 115334 after filtering
+[Rank 1] 2025-09-07 14:25:28,778 - mamba_training.data.dataset_processor - INFO - Processed 130000/1165029 samples, kept 124870 after filtering
+[Rank 1] 2025-09-07 14:25:32,611 - mamba_training.data.dataset_processor - INFO - Processed 140000/1165029 samples, kept 134494 after filtering
+[Rank 1] 2025-09-07 14:25:36,541 - mamba_training.data.dataset_processor - INFO - Processed 150000/1165029 samples, kept 144193 after filtering
+[Rank 1] 2025-09-07 14:25:40,959 - mamba_training.data.dataset_processor - INFO - Processed 160000/1165029 samples, kept 153750 after filtering
+[Rank 1] 2025-09-07 14:25:44,690 - mamba_training.data.dataset_processor - INFO - Processed 170000/1165029 samples, kept 163318 after filtering
+[Rank 1] 2025-09-07 14:25:48,518 - mamba_training.data.dataset_processor - INFO - Processed 180000/1165029 samples, kept 173033 after filtering
+[Rank 1] 2025-09-07 14:25:52,322 - mamba_training.data.dataset_processor - INFO - Processed 190000/1165029 samples, kept 182666 after filtering
+[Rank 1] 2025-09-07 14:25:56,098 - mamba_training.data.dataset_processor - INFO - Processed 200000/1165029 samples, kept 192236 after filtering
+[Rank 1] 2025-09-07 14:26:00,954 - mamba_training.data.dataset_processor - INFO - Processed 210000/1165029 samples, kept 201736 after filtering
+[Rank 1] 2025-09-07 14:26:04,799 - mamba_training.data.dataset_processor - INFO - Processed 220000/1165029 samples, kept 211399 after filtering
+[Rank 1] 2025-09-07 14:26:08,678 - mamba_training.data.dataset_processor - INFO - Processed 230000/1165029 samples, kept 220981 after filtering
+[Rank 1] 2025-09-07 14:26:12,564 - mamba_training.data.dataset_processor - INFO - Processed 240000/1165029 samples, kept 230594 after filtering
+[Rank 1] 2025-09-07 14:26:16,499 - mamba_training.data.dataset_processor - INFO - Processed 250000/1165029 samples, kept 240303 after filtering
+[Rank 1] 2025-09-07 14:26:20,506 - mamba_training.data.dataset_processor - INFO - Processed 260000/1165029 samples, kept 249958 after filtering
+[Rank 1] 2025-09-07 14:26:24,708 - mamba_training.data.dataset_processor - INFO - Processed 270000/1165029 samples, kept 259684 after filtering
+[Rank 1] 2025-09-07 14:26:29,703 - mamba_training.data.dataset_processor - INFO - Processed 280000/1165029 samples, kept 269253 after filtering
+[Rank 1] 2025-09-07 14:26:33,769 - mamba_training.data.dataset_processor - INFO - Processed 290000/1165029 samples, kept 278985 after filtering
+[Rank 1] 2025-09-07 14:26:37,783 - mamba_training.data.dataset_processor - INFO - Processed 300000/1165029 samples, kept 288595 after filtering
+[Rank 1] 2025-09-07 14:26:41,757 - mamba_training.data.dataset_processor - INFO - Processed 310000/1165029 samples, kept 298307 after filtering
+[Rank 1] 2025-09-07 14:26:45,719 - mamba_training.data.dataset_processor - INFO - Processed 320000/1165029 samples, kept 307919 after filtering
+[Rank 1] 2025-09-07 14:26:49,661 - mamba_training.data.dataset_processor - INFO - Processed 330000/1165029 samples, kept 317462 after filtering
+[Rank 1] 2025-09-07 14:26:53,636 - mamba_training.data.dataset_processor - INFO - Processed 340000/1165029 samples, kept 327094 after filtering
+[Rank 1] 2025-09-07 14:26:57,667 - mamba_training.data.dataset_processor - INFO - Processed 350000/1165029 samples, kept 336748 after filtering
+[Rank 1] 2025-09-07 14:27:02,850 - mamba_training.data.dataset_processor - INFO - Processed 360000/1165029 samples, kept 346382 after filtering
+[Rank 1] 2025-09-07 14:27:06,906 - mamba_training.data.dataset_processor - INFO - Processed 370000/1165029 samples, kept 355986 after filtering
+[Rank 1] 2025-09-07 14:27:10,931 - mamba_training.data.dataset_processor - INFO - Processed 380000/1165029 samples, kept 365573 after filtering
+[Rank 1] 2025-09-07 14:27:15,093 - mamba_training.data.dataset_processor - INFO - Processed 390000/1165029 samples, kept 375162 after filtering
+[Rank 1] 2025-09-07 14:27:19,140 - mamba_training.data.dataset_processor - INFO - Processed 400000/1165029 samples, kept 384871 after filtering
+[Rank 1] 2025-09-07 14:27:22,945 - mamba_training.data.dataset_processor - INFO - Processed 410000/1165029 samples, kept 394482 after filtering
+[Rank 1] 2025-09-07 14:27:27,015 - mamba_training.data.dataset_processor - INFO - Processed 420000/1165029 samples, kept 404082 after filtering
+[Rank 1] 2025-09-07 14:27:31,055 - mamba_training.data.dataset_processor - INFO - Processed 430000/1165029 samples, kept 413708 after filtering
+[Rank 1] 2025-09-07 14:27:35,078 - mamba_training.data.dataset_processor - INFO - Processed 440000/1165029 samples, kept 423368 after filtering
+[Rank 1] 2025-09-07 14:27:39,206 - mamba_training.data.dataset_processor - INFO - Processed 450000/1165029 samples, kept 433059 after filtering
+[Rank 1] 2025-09-07 14:27:43,350 - mamba_training.data.dataset_processor - INFO - Processed 460000/1165029 samples, kept 442746 after filtering
+[Rank 1] 2025-09-07 14:27:49,075 - mamba_training.data.dataset_processor - INFO - Processed 470000/1165029 samples, kept 452463 after filtering
+[Rank 1] 2025-09-07 14:27:53,079 - mamba_training.data.dataset_processor - INFO - Processed 480000/1165029 samples, kept 462035 after filtering
+[Rank 1] 2025-09-07 14:27:57,305 - mamba_training.data.dataset_processor - INFO - Processed 490000/1165029 samples, kept 471662 after filtering
+[Rank 1] 2025-09-07 14:28:01,553 - mamba_training.data.dataset_processor - INFO - Processed 500000/1165029 samples, kept 481361 after filtering
+[Rank 1] 2025-09-07 14:28:05,771 - mamba_training.data.dataset_processor - INFO - Processed 510000/1165029 samples, kept 490932 after filtering
+[Rank 1] 2025-09-07 14:28:10,133 - mamba_training.data.dataset_processor - INFO - Processed 520000/1165029 samples, kept 500606 after filtering
+[Rank 1] 2025-09-07 14:28:14,390 - mamba_training.data.dataset_processor - INFO - Processed 530000/1165029 samples, kept 510144 after filtering
+[Rank 1] 2025-09-07 14:28:18,810 - mamba_training.data.dataset_processor - INFO - Processed 540000/1165029 samples, kept 519767 after filtering
+[Rank 1] 2025-09-07 14:28:23,125 - mamba_training.data.dataset_processor - INFO - Processed 550000/1165029 samples, kept 529444 after filtering
+[Rank 1] 2025-09-07 14:28:27,405 - mamba_training.data.dataset_processor - INFO - Processed 560000/1165029 samples, kept 539176 after filtering
+[Rank 1] 2025-09-07 14:28:31,589 - mamba_training.data.dataset_processor - INFO - Processed 570000/1165029 samples, kept 548802 after filtering
+[Rank 1] 2025-09-07 14:28:36,011 - mamba_training.data.dataset_processor - INFO - Processed 580000/1165029 samples, kept 558421 after filtering
+[Rank 1] 2025-09-07 14:28:42,407 - mamba_training.data.dataset_processor - INFO - Processed 590000/1165029 samples, kept 568107 after filtering
+[Rank 1] 2025-09-07 14:28:46,529 - mamba_training.data.dataset_processor - INFO - Processed 600000/1165029 samples, kept 577706 after filtering
+[Rank 1] 2025-09-07 14:28:50,896 - mamba_training.data.dataset_processor - INFO - Processed 610000/1165029 samples, kept 587413 after filtering
+[Rank 1] 2025-09-07 14:28:54,964 - mamba_training.data.dataset_processor - INFO - Processed 620000/1165029 samples, kept 597049 after filtering
+[Rank 1] 2025-09-07 14:28:59,035 - mamba_training.data.dataset_processor - INFO - Processed 630000/1165029 samples, kept 606630 after filtering
+[Rank 1] 2025-09-07 14:29:03,405 - mamba_training.data.dataset_processor - INFO - Processed 640000/1165029 samples, kept 616299 after filtering
+[Rank 1] 2025-09-07 14:29:07,629 - mamba_training.data.dataset_processor - INFO - Processed 650000/1165029 samples, kept 625979 after filtering
+[Rank 1] 2025-09-07 14:29:12,115 - mamba_training.data.dataset_processor - INFO - Processed 660000/1165029 samples, kept 635616 after filtering
+[Rank 1] 2025-09-07 14:29:16,459 - mamba_training.data.dataset_processor - INFO - Processed 670000/1165029 samples, kept 645220 after filtering
+[Rank 1] 2025-09-07 14:29:20,644 - mamba_training.data.dataset_processor - INFO - Processed 680000/1165029 samples, kept 654810 after filtering
+[Rank 1] 2025-09-07 14:29:24,810 - mamba_training.data.dataset_processor - INFO - Processed 690000/1165029 samples, kept 664376 after filtering
+[Rank 1] 2025-09-07 14:29:29,082 - mamba_training.data.dataset_processor - INFO - Processed 700000/1165029 samples, kept 673978 after filtering
+[Rank 1] 2025-09-07 14:29:33,397 - mamba_training.data.dataset_processor - INFO - Processed 710000/1165029 samples, kept 683595 after filtering
+[Rank 1] 2025-09-07 14:29:37,659 - mamba_training.data.dataset_processor - INFO - Processed 720000/1165029 samples, kept 693245 after filtering
+[Rank 1] 2025-09-07 14:29:41,927 - mamba_training.data.dataset_processor - INFO - Processed 730000/1165029 samples, kept 702933 after filtering
+[Rank 1] 2025-09-07 14:29:46,343 - mamba_training.data.dataset_processor - INFO - Processed 740000/1165029 samples, kept 712617 after filtering
+[Rank 1] 2025-09-07 14:29:50,781 - mamba_training.data.dataset_processor - INFO - Processed 750000/1165029 samples, kept 722325 after filtering
+[Rank 1] 2025-09-07 14:29:57,584 - mamba_training.data.dataset_processor - INFO - Processed 760000/1165029 samples, kept 731886 after filtering
+[Rank 1] 2025-09-07 14:30:02,211 - mamba_training.data.dataset_processor - INFO - Processed 770000/1165029 samples, kept 741563 after filtering
+[Rank 1] 2025-09-07 14:30:06,673 - mamba_training.data.dataset_processor - INFO - Processed 780000/1165029 samples, kept 751172 after filtering
+[Rank 1] 2025-09-07 14:30:10,959 - mamba_training.data.dataset_processor - INFO - Processed 790000/1165029 samples, kept 760827 after filtering
+[Rank 1] 2025-09-07 14:30:15,310 - mamba_training.data.dataset_processor - INFO - Processed 800000/1165029 samples, kept 770488 after filtering
+[Rank 1] 2025-09-07 14:30:19,749 - mamba_training.data.dataset_processor - INFO - Processed 810000/1165029 samples, kept 780084 after filtering
+[Rank 1] 2025-09-07 14:30:23,917 - mamba_training.data.dataset_processor - INFO - Processed 820000/1165029 samples, kept 789704 after filtering
+[Rank 1] 2025-09-07 14:30:28,289 - mamba_training.data.dataset_processor - INFO - Processed 830000/1165029 samples, kept 799332 after filtering
+[Rank 1] 2025-09-07 14:30:32,620 - mamba_training.data.dataset_processor - INFO - Processed 840000/1165029 samples, kept 808962 after filtering
+[Rank 1] 2025-09-07 14:30:37,023 - mamba_training.data.dataset_processor - INFO - Processed 850000/1165029 samples, kept 818600 after filtering
+[Rank 1] 2025-09-07 14:30:41,373 - mamba_training.data.dataset_processor - INFO - Processed 860000/1165029 samples, kept 828238 after filtering
+[Rank 1] 2025-09-07 14:30:45,726 - mamba_training.data.dataset_processor - INFO - Processed 870000/1165029 samples, kept 837922 after filtering
+[Rank 1] 2025-09-07 14:30:50,087 - mamba_training.data.dataset_processor - INFO - Processed 880000/1165029 samples, kept 847636 after filtering
+[Rank 1] 2025-09-07 14:30:54,685 - mamba_training.data.dataset_processor - INFO - Processed 890000/1165029 samples, kept 857288 after filtering
+[Rank 1] 2025-09-07 14:30:59,237 - mamba_training.data.dataset_processor - INFO - Processed 900000/1165029 samples, kept 866875 after filtering
+[Rank 1] 2025-09-07 14:31:03,786 - mamba_training.data.dataset_processor - INFO - Processed 910000/1165029 samples, kept 876486 after filtering
+[Rank 1] 2025-09-07 14:31:08,198 - mamba_training.data.dataset_processor - INFO - Processed 920000/1165029 samples, kept 886110 after filtering
+[Rank 1] 2025-09-07 14:31:12,490 - mamba_training.data.dataset_processor - INFO - Processed 930000/1165029 samples, kept 895602 after filtering
+[Rank 1] 2025-09-07 14:31:16,987 - mamba_training.data.dataset_processor - INFO - Processed 940000/1165029 samples, kept 905266 after filtering
+[Rank 1] 2025-09-07 14:31:21,478 - mamba_training.data.dataset_processor - INFO - Processed 950000/1165029 samples, kept 914889 after filtering
+[Rank 1] 2025-09-07 14:31:29,010 - mamba_training.data.dataset_processor - INFO - Processed 960000/1165029 samples, kept 924532 after filtering
+[Rank 1] 2025-09-07 14:31:33,321 - mamba_training.data.dataset_processor - INFO - Processed 970000/1165029 samples, kept 934151 after filtering
+[Rank 1] 2025-09-07 14:31:37,852 - mamba_training.data.dataset_processor - INFO - Processed 980000/1165029 samples, kept 943783 after filtering
+[Rank 1] 2025-09-07 14:31:42,589 - mamba_training.data.dataset_processor - INFO - Processed 990000/1165029 samples, kept 953434 after filtering
+[Rank 1] 2025-09-07 14:31:46,873 - mamba_training.data.dataset_processor - INFO - Processed 1000000/1165029 samples, kept 963005 after filtering
+[Rank 1] 2025-09-07 14:31:51,252 - mamba_training.data.dataset_processor - INFO - Processed 1010000/1165029 samples, kept 972675 after filtering
+[Rank 1] 2025-09-07 14:31:55,562 - mamba_training.data.dataset_processor - INFO - Processed 1020000/1165029 samples, kept 982298 after filtering
+[Rank 1] 2025-09-07 14:31:59,934 - mamba_training.data.dataset_processor - INFO - Processed 1030000/1165029 samples, kept 991940 after filtering
+[Rank 1] 2025-09-07 14:32:04,262 - mamba_training.data.dataset_processor - INFO - Processed 1040000/1165029 samples, kept 1001472 after filtering
+[Rank 1] 2025-09-07 14:32:08,881 - mamba_training.data.dataset_processor - INFO - Processed 1050000/1165029 samples, kept 1011081 after filtering
+[Rank 1] 2025-09-07 14:32:13,282 - mamba_training.data.dataset_processor - INFO - Processed 1060000/1165029 samples, kept 1020733 after filtering
+[Rank 1] 2025-09-07 14:32:17,827 - mamba_training.data.dataset_processor - INFO - Processed 1070000/1165029 samples, kept 1030323 after filtering
+[Rank 1] 2025-09-07 14:32:22,092 - mamba_training.data.dataset_processor - INFO - Processed 1080000/1165029 samples, kept 1039987 after filtering
+[Rank 1] 2025-09-07 14:32:26,545 - mamba_training.data.dataset_processor - INFO - Processed 1090000/1165029 samples, kept 1049627 after filtering
+[Rank 1] 2025-09-07 14:32:31,111 - mamba_training.data.dataset_processor - INFO - Processed 1100000/1165029 samples, kept 1059291 after filtering
+[Rank 1] 2025-09-07 14:32:35,640 - mamba_training.data.dataset_processor - INFO - Processed 1110000/1165029 samples, kept 1068900 after filtering
+[Rank 1] 2025-09-07 14:32:40,179 - mamba_training.data.dataset_processor - INFO - Processed 1120000/1165029 samples, kept 1078513 after filtering
+[Rank 1] 2025-09-07 14:32:44,760 - mamba_training.data.dataset_processor - INFO - Processed 1130000/1165029 samples, kept 1088175 after filtering
+[Rank 1] 2025-09-07 14:32:49,394 - mamba_training.data.dataset_processor - INFO - Processed 1140000/1165029 samples, kept 1097844 after filtering
+[Rank 1] 2025-09-07 14:32:53,740 - mamba_training.data.dataset_processor - INFO - Processed 1150000/1165029 samples, kept 1107417 after filtering
+[Rank 1] 2025-09-07 14:32:58,243 - mamba_training.data.dataset_processor - INFO - Processed 1160000/1165029 samples, kept 1117081 after filtering
+[Rank 1] 2025-09-07 14:33:00,444 - mamba_training.data.dataset_processor - INFO - Dataset processing complete. Kept 1121923/1165029 samples (96.3%)
+[Rank 1] 2025-09-07 14:33:01,450 - root - INFO - Created datasets: train=1009730, val=112193
+[Rank 1] 2025-09-07 14:33:11,196 - mamba_training.data.data_loader - INFO - Packed 1009730 samples into 640586 chunks (efficiency: 1.58x)
+[Rank 1] 2025-09-07 14:33:36,503 - mamba_training.data.data_loader - INFO - Created MambaDataLoader with 640586 samples, batch_size=1, num_workers=4
+[Rank 1] 2025-09-07 14:33:39,874 - mamba_training.data.data_loader - INFO - Created MambaDataLoader with 112193 samples, batch_size=1, num_workers=4
+[Rank 1] 2025-09-07 14:33:39,874 - root - INFO - Creating Mamba model...
+[Rank 1] 2025-09-07 14:33:40,276 - mamba_training.training.distributed_trainer - INFO - Using device: cuda:1
+[Rank 1] 2025-09-07 14:33:40,293 - mamba_training.training.distributed_trainer - INFO - Using DDP for distributed training
+[Rank 1] 2025-09-07 14:33:41,201 - mamba_training.training.optimization - INFO - Initialized OptimizationManager with lr=0.0001, weight_decay=0.1, warmup_steps=1000
+[Rank 1] 2025-09-07 14:33:41,202 - mamba_training.training.distributed_trainer - INFO - Initialized DistributedTrainer on rank 1/4
+[Rank 1] 2025-09-07 14:33:41,202 - mamba_training.training.distributed_trainer - INFO - Total training steps: 7506
+[Rank 1] 2025-09-07 14:33:41,202 - mamba_training.training.distributed_trainer - INFO - Starting training...
+[Rank 1] 2025-09-08 23:24:01,218 - mamba_training.training.distributed_trainer - INFO - Training completed in 118220.02 seconds

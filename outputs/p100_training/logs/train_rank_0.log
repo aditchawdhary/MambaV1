@@ -1,0 +1,256 @@
+[Rank 0] 2025-09-07 14:23:06,588 - root - INFO - Starting training with configuration: Config(model=MambaConfig(d_model=256, d_state=8, d_conv=4, expand=2, n_layers=6, vocab_size=50257, pad_token_id=50256), training=TrainingConfig(batch_size=1, gradient_accumulation_steps=64, learning_rate=0.0001, weight_decay=0.1, max_grad_norm=1.0, num_epochs=3, warmup_steps=1000, save_steps=1000, eval_steps=500, use_mixed_precision=True, gradient_checkpointing=True), data=DataConfig(max_seq_length=128, tokenizer_path='gpt2', dataset_path='data/train.txt', num_workers=4, preprocessing_batch_size=1000, train_split=0.9, val_split=0.1, shuffle_data=True), experiment_name='p100_training', output_dir='outputs', log_level='INFO', seed=42)
+[Rank 0] 2025-09-07 14:23:06,589 - root - INFO - Distributed info: {'world_size': 4, 'rank': 0, 'local_rank': 0, 'is_distributed': True}
+[Rank 0] 2025-09-07 14:23:06,589 - root - INFO - Output directory: outputs/p100_training
+[Rank 0] 2025-09-07 14:23:06,592 - root - INFO - Saved configuration to: outputs/p100_training/config.yaml
+[Rank 0] 2025-09-07 14:23:06,593 - root - INFO - Creating datasets...
+[Rank 0] 2025-09-07 14:23:06,948 - mamba_training.data.dataset_processor - INFO - Initialized DatasetProcessor with tokenizer vocab size: 50257
+[Rank 0] 2025-09-07 14:23:06,948 - root - ERROR - Training failed with error: Dataset not found: data/train.txt
+[Rank 0] 2025-09-07 14:23:06,948 - root - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "/workspace/MambaV1/scripts/train.py", line 352, in main
+    train_dataset, val_dataset = create_datasets(config, distributed_info)
+  File "/workspace/MambaV1/scripts/train.py", line 145, in create_datasets
+    dataset = processor.process_dataset(config.data.dataset_path)
+  File "/workspace/MambaV1/mamba_training/data/dataset_processor.py", line 261, in process_dataset
+    raise FileNotFoundError(f"Dataset not found: {dataset_path}")
+FileNotFoundError: Dataset not found: data/train.txt
+
+[Rank 0] 2025-09-07 14:24:27,905 - root - INFO - Starting training with configuration: Config(model=MambaConfig(d_model=256, d_state=8, d_conv=4, expand=2, n_layers=6, vocab_size=50257, pad_token_id=50256), training=TrainingConfig(batch_size=1, gradient_accumulation_steps=64, learning_rate=0.0001, weight_decay=0.1, max_grad_norm=1.0, num_epochs=3, warmup_steps=1000, save_steps=1000, eval_steps=500, use_mixed_precision=True, gradient_checkpointing=True), data=DataConfig(max_seq_length=128, tokenizer_path='gpt2', dataset_path='data/train.txt', num_workers=4, preprocessing_batch_size=1000, train_split=0.9, val_split=0.1, shuffle_data=True), experiment_name='p100_training', output_dir='outputs', log_level='INFO', seed=42)
+[Rank 0] 2025-09-07 14:24:27,905 - root - INFO - Distributed info: {'world_size': 4, 'rank': 0, 'local_rank': 0, 'is_distributed': True}
+[Rank 0] 2025-09-07 14:24:27,905 - root - INFO - Output directory: outputs/p100_training
+[Rank 0] 2025-09-07 14:24:27,907 - root - INFO - Saved configuration to: outputs/p100_training/config.yaml
+[Rank 0] 2025-09-07 14:24:27,908 - root - INFO - Creating datasets...
+[Rank 0] 2025-09-07 14:24:28,256 - mamba_training.data.dataset_processor - INFO - Initialized DatasetProcessor with tokenizer vocab size: 50257
+[Rank 0] 2025-09-07 14:24:28,256 - mamba_training.data.dataset_processor - INFO - Processing dataset: data/train.txt
+[Rank 0] 2025-09-07 14:24:42,482 - mamba_training.data.dataset_processor - INFO - Processed 10000/1165029 samples, kept 9622 after filtering
+[Rank 0] 2025-09-07 14:24:46,352 - mamba_training.data.dataset_processor - INFO - Processed 20000/1165029 samples, kept 19231 after filtering
+[Rank 0] 2025-09-07 14:24:50,582 - mamba_training.data.dataset_processor - INFO - Processed 30000/1165029 samples, kept 28968 after filtering
+[Rank 0] 2025-09-07 14:24:53,873 - mamba_training.data.dataset_processor - INFO - Processed 40000/1165029 samples, kept 38465 after filtering
+[Rank 0] 2025-09-07 14:24:57,680 - mamba_training.data.dataset_processor - INFO - Processed 50000/1165029 samples, kept 48076 after filtering
+[Rank 0] 2025-09-07 14:25:01,259 - mamba_training.data.dataset_processor - INFO - Processed 60000/1165029 samples, kept 57640 after filtering
+[Rank 0] 2025-09-07 14:25:04,780 - mamba_training.data.dataset_processor - INFO - Processed 70000/1165029 samples, kept 67228 after filtering
+[Rank 0] 2025-09-07 14:25:08,928 - mamba_training.data.dataset_processor - INFO - Processed 80000/1165029 samples, kept 76793 after filtering
+[Rank 0] 2025-09-07 14:25:12,411 - mamba_training.data.dataset_processor - INFO - Processed 90000/1165029 samples, kept 86394 after filtering
+[Rank 0] 2025-09-07 14:25:16,061 - mamba_training.data.dataset_processor - INFO - Processed 100000/1165029 samples, kept 95979 after filtering
+[Rank 0] 2025-09-07 14:25:19,713 - mamba_training.data.dataset_processor - INFO - Processed 110000/1165029 samples, kept 105635 after filtering
+[Rank 0] 2025-09-07 14:25:24,252 - mamba_training.data.dataset_processor - INFO - Processed 120000/1165029 samples, kept 115334 after filtering
+[Rank 0] 2025-09-07 14:25:27,875 - mamba_training.data.dataset_processor - INFO - Processed 130000/1165029 samples, kept 124870 after filtering
+[Rank 0] 2025-09-07 14:25:31,872 - mamba_training.data.dataset_processor - INFO - Processed 140000/1165029 samples, kept 134494 after filtering
+[Rank 0] 2025-09-07 14:25:35,699 - mamba_training.data.dataset_processor - INFO - Processed 150000/1165029 samples, kept 144193 after filtering
+[Rank 0] 2025-09-07 14:25:40,120 - mamba_training.data.dataset_processor - INFO - Processed 160000/1165029 samples, kept 153750 after filtering
+[Rank 0] 2025-09-07 14:25:43,914 - mamba_training.data.dataset_processor - INFO - Processed 170000/1165029 samples, kept 163318 after filtering
+[Rank 0] 2025-09-07 14:25:47,732 - mamba_training.data.dataset_processor - INFO - Processed 180000/1165029 samples, kept 173033 after filtering
+[Rank 0] 2025-09-07 14:25:51,499 - mamba_training.data.dataset_processor - INFO - Processed 190000/1165029 samples, kept 182666 after filtering
+[Rank 0] 2025-09-07 14:25:55,265 - mamba_training.data.dataset_processor - INFO - Processed 200000/1165029 samples, kept 192236 after filtering
+[Rank 0] 2025-09-07 14:26:00,124 - mamba_training.data.dataset_processor - INFO - Processed 210000/1165029 samples, kept 201736 after filtering
+[Rank 0] 2025-09-07 14:26:04,021 - mamba_training.data.dataset_processor - INFO - Processed 220000/1165029 samples, kept 211399 after filtering
+[Rank 0] 2025-09-07 14:26:07,856 - mamba_training.data.dataset_processor - INFO - Processed 230000/1165029 samples, kept 220981 after filtering
+[Rank 0] 2025-09-07 14:26:11,718 - mamba_training.data.dataset_processor - INFO - Processed 240000/1165029 samples, kept 230594 after filtering
+[Rank 0] 2025-09-07 14:26:15,742 - mamba_training.data.dataset_processor - INFO - Processed 250000/1165029 samples, kept 240303 after filtering
+[Rank 0] 2025-09-07 14:26:19,638 - mamba_training.data.dataset_processor - INFO - Processed 260000/1165029 samples, kept 249958 after filtering
+[Rank 0] 2025-09-07 14:26:23,867 - mamba_training.data.dataset_processor - INFO - Processed 270000/1165029 samples, kept 259684 after filtering
+[Rank 0] 2025-09-07 14:26:28,854 - mamba_training.data.dataset_processor - INFO - Processed 280000/1165029 samples, kept 269253 after filtering
+[Rank 0] 2025-09-07 14:26:32,826 - mamba_training.data.dataset_processor - INFO - Processed 290000/1165029 samples, kept 278985 after filtering
+[Rank 0] 2025-09-07 14:26:36,880 - mamba_training.data.dataset_processor - INFO - Processed 300000/1165029 samples, kept 288595 after filtering
+[Rank 0] 2025-09-07 14:26:40,886 - mamba_training.data.dataset_processor - INFO - Processed 310000/1165029 samples, kept 298307 after filtering
+[Rank 0] 2025-09-07 14:26:44,828 - mamba_training.data.dataset_processor - INFO - Processed 320000/1165029 samples, kept 307919 after filtering
+[Rank 0] 2025-09-07 14:26:48,767 - mamba_training.data.dataset_processor - INFO - Processed 330000/1165029 samples, kept 317462 after filtering
+[Rank 0] 2025-09-07 14:26:52,717 - mamba_training.data.dataset_processor - INFO - Processed 340000/1165029 samples, kept 327094 after filtering
+[Rank 0] 2025-09-07 14:26:56,731 - mamba_training.data.dataset_processor - INFO - Processed 350000/1165029 samples, kept 336748 after filtering
+[Rank 0] 2025-09-07 14:27:02,111 - mamba_training.data.dataset_processor - INFO - Processed 360000/1165029 samples, kept 346382 after filtering
+[Rank 0] 2025-09-07 14:27:06,216 - mamba_training.data.dataset_processor - INFO - Processed 370000/1165029 samples, kept 355986 after filtering
+[Rank 0] 2025-09-07 14:27:10,256 - mamba_training.data.dataset_processor - INFO - Processed 380000/1165029 samples, kept 365573 after filtering
+[Rank 0] 2025-09-07 14:27:14,294 - mamba_training.data.dataset_processor - INFO - Processed 390000/1165029 samples, kept 375162 after filtering
+[Rank 0] 2025-09-07 14:27:18,270 - mamba_training.data.dataset_processor - INFO - Processed 400000/1165029 samples, kept 384871 after filtering
+[Rank 0] 2025-09-07 14:27:22,031 - mamba_training.data.dataset_processor - INFO - Processed 410000/1165029 samples, kept 394482 after filtering
+[Rank 0] 2025-09-07 14:27:26,069 - mamba_training.data.dataset_processor - INFO - Processed 420000/1165029 samples, kept 404082 after filtering
+[Rank 0] 2025-09-07 14:27:30,077 - mamba_training.data.dataset_processor - INFO - Processed 430000/1165029 samples, kept 413708 after filtering
+[Rank 0] 2025-09-07 14:27:34,068 - mamba_training.data.dataset_processor - INFO - Processed 440000/1165029 samples, kept 423368 after filtering
+[Rank 0] 2025-09-07 14:27:38,175 - mamba_training.data.dataset_processor - INFO - Processed 450000/1165029 samples, kept 433059 after filtering
+[Rank 0] 2025-09-07 14:27:42,279 - mamba_training.data.dataset_processor - INFO - Processed 460000/1165029 samples, kept 442746 after filtering
+[Rank 0] 2025-09-07 14:27:48,190 - mamba_training.data.dataset_processor - INFO - Processed 470000/1165029 samples, kept 452463 after filtering
+[Rank 0] 2025-09-07 14:27:52,233 - mamba_training.data.dataset_processor - INFO - Processed 480000/1165029 samples, kept 462035 after filtering
+[Rank 0] 2025-09-07 14:27:56,438 - mamba_training.data.dataset_processor - INFO - Processed 490000/1165029 samples, kept 471662 after filtering
+[Rank 0] 2025-09-07 14:28:00,643 - mamba_training.data.dataset_processor - INFO - Processed 500000/1165029 samples, kept 481361 after filtering
+[Rank 0] 2025-09-07 14:28:04,784 - mamba_training.data.dataset_processor - INFO - Processed 510000/1165029 samples, kept 490932 after filtering
+[Rank 0] 2025-09-07 14:28:08,969 - mamba_training.data.dataset_processor - INFO - Processed 520000/1165029 samples, kept 500606 after filtering
+[Rank 0] 2025-09-07 14:28:13,082 - mamba_training.data.dataset_processor - INFO - Processed 530000/1165029 samples, kept 510144 after filtering
+[Rank 0] 2025-09-07 14:28:17,348 - mamba_training.data.dataset_processor - INFO - Processed 540000/1165029 samples, kept 519767 after filtering
+[Rank 0] 2025-09-07 14:28:21,616 - mamba_training.data.dataset_processor - INFO - Processed 550000/1165029 samples, kept 529444 after filtering
+[Rank 0] 2025-09-07 14:28:25,860 - mamba_training.data.dataset_processor - INFO - Processed 560000/1165029 samples, kept 539176 after filtering
+[Rank 0] 2025-09-07 14:28:30,032 - mamba_training.data.dataset_processor - INFO - Processed 570000/1165029 samples, kept 548802 after filtering
+[Rank 0] 2025-09-07 14:28:34,365 - mamba_training.data.dataset_processor - INFO - Processed 580000/1165029 samples, kept 558421 after filtering
+[Rank 0] 2025-09-07 14:28:40,818 - mamba_training.data.dataset_processor - INFO - Processed 590000/1165029 samples, kept 568107 after filtering
+[Rank 0] 2025-09-07 14:28:45,057 - mamba_training.data.dataset_processor - INFO - Processed 600000/1165029 samples, kept 577706 after filtering
+[Rank 0] 2025-09-07 14:28:49,393 - mamba_training.data.dataset_processor - INFO - Processed 610000/1165029 samples, kept 587413 after filtering
+[Rank 0] 2025-09-07 14:28:53,439 - mamba_training.data.dataset_processor - INFO - Processed 620000/1165029 samples, kept 597049 after filtering
+[Rank 0] 2025-09-07 14:28:57,488 - mamba_training.data.dataset_processor - INFO - Processed 630000/1165029 samples, kept 606630 after filtering
+[Rank 0] 2025-09-07 14:29:01,695 - mamba_training.data.dataset_processor - INFO - Processed 640000/1165029 samples, kept 616299 after filtering
+[Rank 0] 2025-09-07 14:29:05,812 - mamba_training.data.dataset_processor - INFO - Processed 650000/1165029 samples, kept 625979 after filtering
+[Rank 0] 2025-09-07 14:29:10,033 - mamba_training.data.dataset_processor - INFO - Processed 660000/1165029 samples, kept 635616 after filtering
+[Rank 0] 2025-09-07 14:29:14,403 - mamba_training.data.dataset_processor - INFO - Processed 670000/1165029 samples, kept 645220 after filtering
+[Rank 0] 2025-09-07 14:29:18,552 - mamba_training.data.dataset_processor - INFO - Processed 680000/1165029 samples, kept 654810 after filtering
+[Rank 0] 2025-09-07 14:29:22,692 - mamba_training.data.dataset_processor - INFO - Processed 690000/1165029 samples, kept 664376 after filtering
+[Rank 0] 2025-09-07 14:29:27,024 - mamba_training.data.dataset_processor - INFO - Processed 700000/1165029 samples, kept 673978 after filtering
+[Rank 0] 2025-09-07 14:29:31,399 - mamba_training.data.dataset_processor - INFO - Processed 710000/1165029 samples, kept 683595 after filtering
+[Rank 0] 2025-09-07 14:29:35,765 - mamba_training.data.dataset_processor - INFO - Processed 720000/1165029 samples, kept 693245 after filtering
+[Rank 0] 2025-09-07 14:29:40,064 - mamba_training.data.dataset_processor - INFO - Processed 730000/1165029 samples, kept 702933 after filtering
+[Rank 0] 2025-09-07 14:29:44,522 - mamba_training.data.dataset_processor - INFO - Processed 740000/1165029 samples, kept 712617 after filtering
+[Rank 0] 2025-09-07 14:29:48,919 - mamba_training.data.dataset_processor - INFO - Processed 750000/1165029 samples, kept 722325 after filtering
+[Rank 0] 2025-09-07 14:29:55,799 - mamba_training.data.dataset_processor - INFO - Processed 760000/1165029 samples, kept 731886 after filtering
+[Rank 0] 2025-09-07 14:30:00,229 - mamba_training.data.dataset_processor - INFO - Processed 770000/1165029 samples, kept 741563 after filtering
+[Rank 0] 2025-09-07 14:30:04,546 - mamba_training.data.dataset_processor - INFO - Processed 780000/1165029 samples, kept 751172 after filtering
+[Rank 0] 2025-09-07 14:30:08,795 - mamba_training.data.dataset_processor - INFO - Processed 790000/1165029 samples, kept 760827 after filtering
+[Rank 0] 2025-09-07 14:30:13,169 - mamba_training.data.dataset_processor - INFO - Processed 800000/1165029 samples, kept 770488 after filtering
+[Rank 0] 2025-09-07 14:30:17,676 - mamba_training.data.dataset_processor - INFO - Processed 810000/1165029 samples, kept 780084 after filtering
+[Rank 0] 2025-09-07 14:30:21,907 - mamba_training.data.dataset_processor - INFO - Processed 820000/1165029 samples, kept 789704 after filtering
+[Rank 0] 2025-09-07 14:30:26,404 - mamba_training.data.dataset_processor - INFO - Processed 830000/1165029 samples, kept 799332 after filtering
+[Rank 0] 2025-09-07 14:30:30,787 - mamba_training.data.dataset_processor - INFO - Processed 840000/1165029 samples, kept 808962 after filtering
+[Rank 0] 2025-09-07 14:30:35,186 - mamba_training.data.dataset_processor - INFO - Processed 850000/1165029 samples, kept 818600 after filtering
+[Rank 0] 2025-09-07 14:30:39,472 - mamba_training.data.dataset_processor - INFO - Processed 860000/1165029 samples, kept 828238 after filtering
+[Rank 0] 2025-09-07 14:30:43,923 - mamba_training.data.dataset_processor - INFO - Processed 870000/1165029 samples, kept 837922 after filtering
+[Rank 0] 2025-09-07 14:30:48,304 - mamba_training.data.dataset_processor - INFO - Processed 880000/1165029 samples, kept 847636 after filtering
+[Rank 0] 2025-09-07 14:30:52,835 - mamba_training.data.dataset_processor - INFO - Processed 890000/1165029 samples, kept 857288 after filtering
+[Rank 0] 2025-09-07 14:30:57,249 - mamba_training.data.dataset_processor - INFO - Processed 900000/1165029 samples, kept 866875 after filtering
+[Rank 0] 2025-09-07 14:31:01,702 - mamba_training.data.dataset_processor - INFO - Processed 910000/1165029 samples, kept 876486 after filtering
+[Rank 0] 2025-09-07 14:31:06,115 - mamba_training.data.dataset_processor - INFO - Processed 920000/1165029 samples, kept 886110 after filtering
+[Rank 0] 2025-09-07 14:31:10,448 - mamba_training.data.dataset_processor - INFO - Processed 930000/1165029 samples, kept 895602 after filtering
+[Rank 0] 2025-09-07 14:31:15,033 - mamba_training.data.dataset_processor - INFO - Processed 940000/1165029 samples, kept 905266 after filtering
+[Rank 0] 2025-09-07 14:31:19,689 - mamba_training.data.dataset_processor - INFO - Processed 950000/1165029 samples, kept 914889 after filtering
+[Rank 0] 2025-09-07 14:31:27,453 - mamba_training.data.dataset_processor - INFO - Processed 960000/1165029 samples, kept 924532 after filtering
+[Rank 0] 2025-09-07 14:31:31,780 - mamba_training.data.dataset_processor - INFO - Processed 970000/1165029 samples, kept 934151 after filtering
+[Rank 0] 2025-09-07 14:31:36,151 - mamba_training.data.dataset_processor - INFO - Processed 980000/1165029 samples, kept 943783 after filtering
+[Rank 0] 2025-09-07 14:31:40,722 - mamba_training.data.dataset_processor - INFO - Processed 990000/1165029 samples, kept 953434 after filtering
+[Rank 0] 2025-09-07 14:31:44,854 - mamba_training.data.dataset_processor - INFO - Processed 1000000/1165029 samples, kept 963005 after filtering
+[Rank 0] 2025-09-07 14:31:49,217 - mamba_training.data.dataset_processor - INFO - Processed 1010000/1165029 samples, kept 972675 after filtering
+[Rank 0] 2025-09-07 14:31:53,536 - mamba_training.data.dataset_processor - INFO - Processed 1020000/1165029 samples, kept 982298 after filtering
+[Rank 0] 2025-09-07 14:31:57,934 - mamba_training.data.dataset_processor - INFO - Processed 1030000/1165029 samples, kept 991940 after filtering
+[Rank 0] 2025-09-07 14:32:02,275 - mamba_training.data.dataset_processor - INFO - Processed 1040000/1165029 samples, kept 1001472 after filtering
+[Rank 0] 2025-09-07 14:32:06,810 - mamba_training.data.dataset_processor - INFO - Processed 1050000/1165029 samples, kept 1011081 after filtering
+[Rank 0] 2025-09-07 14:32:11,346 - mamba_training.data.dataset_processor - INFO - Processed 1060000/1165029 samples, kept 1020733 after filtering
+[Rank 0] 2025-09-07 14:32:16,023 - mamba_training.data.dataset_processor - INFO - Processed 1070000/1165029 samples, kept 1030323 after filtering
+[Rank 0] 2025-09-07 14:32:20,472 - mamba_training.data.dataset_processor - INFO - Processed 1080000/1165029 samples, kept 1039987 after filtering
+[Rank 0] 2025-09-07 14:32:25,009 - mamba_training.data.dataset_processor - INFO - Processed 1090000/1165029 samples, kept 1049627 after filtering
+[Rank 0] 2025-09-07 14:32:29,611 - mamba_training.data.dataset_processor - INFO - Processed 1100000/1165029 samples, kept 1059291 after filtering
+[Rank 0] 2025-09-07 14:32:34,047 - mamba_training.data.dataset_processor - INFO - Processed 1110000/1165029 samples, kept 1068900 after filtering
+[Rank 0] 2025-09-07 14:32:38,474 - mamba_training.data.dataset_processor - INFO - Processed 1120000/1165029 samples, kept 1078513 after filtering
+[Rank 0] 2025-09-07 14:32:42,892 - mamba_training.data.dataset_processor - INFO - Processed 1130000/1165029 samples, kept 1088175 after filtering
+[Rank 0] 2025-09-07 14:32:47,457 - mamba_training.data.dataset_processor - INFO - Processed 1140000/1165029 samples, kept 1097844 after filtering
+[Rank 0] 2025-09-07 14:32:51,884 - mamba_training.data.dataset_processor - INFO - Processed 1150000/1165029 samples, kept 1107417 after filtering
+[Rank 0] 2025-09-07 14:32:56,540 - mamba_training.data.dataset_processor - INFO - Processed 1160000/1165029 samples, kept 1117081 after filtering
+[Rank 0] 2025-09-07 14:32:58,837 - mamba_training.data.dataset_processor - INFO - Dataset processing complete. Kept 1121923/1165029 samples (96.3%)
+[Rank 0] 2025-09-07 14:32:59,835 - root - INFO - Created datasets: train=1009730, val=112193
+[Rank 0] 2025-09-07 14:33:09,968 - mamba_training.data.data_loader - INFO - Packed 1009730 samples into 640586 chunks (efficiency: 1.58x)
+[Rank 0] 2025-09-07 14:33:34,900 - mamba_training.data.data_loader - INFO - Created MambaDataLoader with 640586 samples, batch_size=1, num_workers=4
+[Rank 0] 2025-09-07 14:33:38,517 - mamba_training.data.data_loader - INFO - Created MambaDataLoader with 112193 samples, batch_size=1, num_workers=4
+[Rank 0] 2025-09-07 14:33:38,517 - root - INFO - Creating Mamba model...
+[Rank 0] 2025-09-07 14:33:38,950 - root - INFO - Model parameters: {'embeddings': 12865792, 'mamba_blocks': 2531472, 'final_norm': 512, 'lm_head': 0, 'total': 15397776, 'trainable': 15397776}
+[Rank 0] 2025-09-07 14:33:38,951 - root - INFO - Model memory footprint: {'embeddings_mb': 49.0791015625, 'mamba_blocks_mb': 9.65679931640625, 'final_norm_mb': 0.001953125, 'lm_head_mb': 0.0, 'total_params_mb': 58.73785400390625}
+[Rank 0] 2025-09-07 14:33:38,951 - mamba_training.training.distributed_trainer - INFO - Using device: cuda:0
+[Rank 0] 2025-09-07 14:33:40,858 - mamba_training.training.distributed_trainer - INFO - Using DDP for distributed training
+[Rank 0] 2025-09-07 14:33:41,202 - mamba_training.training.optimization - INFO - Initialized OptimizationManager with lr=0.0001, weight_decay=0.1, warmup_steps=1000
+[Rank 0] 2025-09-07 14:33:41,203 - mamba_training.training.distributed_trainer - INFO - Initialized DistributedTrainer on rank 0/4
+[Rank 0] 2025-09-07 14:33:41,203 - mamba_training.training.distributed_trainer - INFO - Total training steps: 7506
+[Rank 0] 2025-09-07 14:33:41,203 - root - INFO - Starting training...
+[Rank 0] 2025-09-07 14:33:41,203 - mamba_training.training.distributed_trainer - INFO - Starting training...
+[Rank 0] 2025-09-07 14:56:58,294 - mamba_training.training.distributed_trainer - INFO - Step 100: loss=10.8751, lr=1.00e-05, grad_norm=0.4808
+[Rank 0] 2025-09-07 15:19:37,587 - mamba_training.training.distributed_trainer - INFO - Step 200: loss=10.6400, lr=2.00e-05, grad_norm=0.5170
+[Rank 0] 2025-09-07 15:43:13,118 - mamba_training.training.distributed_trainer - INFO - Step 300: loss=9.9346, lr=3.00e-05, grad_norm=0.8662
+[Rank 0] 2025-09-07 16:06:46,604 - mamba_training.training.distributed_trainer - INFO - Step 400: loss=8.6750, lr=4.00e-05, grad_norm=1.3668
+[Rank 0] 2025-09-07 16:30:33,468 - mamba_training.training.distributed_trainer - INFO - Step 500: loss=7.9324, lr=5.00e-05, grad_norm=1.2597
+[Rank 0] 2025-09-07 16:42:44,041 - mamba_training.training.distributed_trainer - INFO - Step 500 validation: {'loss': 7.691921234130859, 'perplexity': 2190.5791015625, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-07 17:05:43,346 - mamba_training.training.distributed_trainer - INFO - Step 600: loss=7.5544, lr=6.00e-05, grad_norm=0.7742
+[Rank 0] 2025-09-07 17:29:17,327 - mamba_training.training.distributed_trainer - INFO - Step 700: loss=7.3055, lr=7.00e-05, grad_norm=0.3731
+[Rank 0] 2025-09-07 17:52:35,203 - mamba_training.training.distributed_trainer - INFO - Step 800: loss=7.6330, lr=8.00e-05, grad_norm=0.2894
+[Rank 0] 2025-09-07 18:15:23,798 - mamba_training.training.distributed_trainer - INFO - Step 900: loss=4.2509, lr=9.00e-05, grad_norm=0.3347
+[Rank 0] 2025-09-07 18:39:03,829 - mamba_training.training.distributed_trainer - INFO - Step 1000: loss=6.2162, lr=1.00e-04, grad_norm=0.6178
+[Rank 0] 2025-09-07 18:51:25,497 - mamba_training.training.distributed_trainer - INFO - Step 1000 validation: {'loss': 5.797235488891602, 'perplexity': 329.3876953125, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-07 19:14:02,340 - mamba_training.training.distributed_trainer - INFO - Step 1100: loss=5.7865, lr=9.99e-05, grad_norm=0.7979
+[Rank 0] 2025-09-07 19:38:00,264 - mamba_training.training.distributed_trainer - INFO - Step 1200: loss=4.7451, lr=9.98e-05, grad_norm=1.2201
+[Rank 0] 2025-09-07 20:00:45,935 - mamba_training.training.distributed_trainer - INFO - Step 1300: loss=5.8635, lr=9.95e-05, grad_norm=0.8892
+[Rank 0] 2025-09-07 20:23:23,108 - mamba_training.training.distributed_trainer - INFO - Step 1400: loss=5.4314, lr=9.91e-05, grad_norm=0.9298
+[Rank 0] 2025-09-07 20:47:28,914 - mamba_training.training.distributed_trainer - INFO - Step 1500: loss=5.3540, lr=9.85e-05, grad_norm=0.6891
+[Rank 0] 2025-09-07 20:59:28,166 - mamba_training.training.distributed_trainer - INFO - Step 1500 validation: {'loss': 5.312709808349609, 'perplexity': 202.89930725097656, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-07 21:22:47,300 - mamba_training.training.distributed_trainer - INFO - Step 1600: loss=4.0093, lr=9.79e-05, grad_norm=1.1552
+[Rank 0] 2025-09-07 21:46:07,570 - mamba_training.training.distributed_trainer - INFO - Step 1700: loss=5.2808, lr=9.72e-05, grad_norm=1.2668
+[Rank 0] 2025-09-07 22:09:41,793 - mamba_training.training.distributed_trainer - INFO - Step 1800: loss=6.2252, lr=9.63e-05, grad_norm=0.9172
+[Rank 0] 2025-09-07 22:32:55,274 - mamba_training.training.distributed_trainer - INFO - Step 1900: loss=6.4983, lr=9.54e-05, grad_norm=1.0549
+[Rank 0] 2025-09-07 22:56:11,708 - mamba_training.training.distributed_trainer - INFO - Step 2000: loss=3.4173, lr=9.43e-05, grad_norm=0.8015
+[Rank 0] 2025-09-07 23:08:20,019 - mamba_training.training.distributed_trainer - INFO - Step 2000 validation: {'loss': 5.049098968505859, 'perplexity': 155.88194274902344, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-07 23:32:40,648 - mamba_training.training.distributed_trainer - INFO - Step 2100: loss=6.2503, lr=9.31e-05, grad_norm=1.6654
+[Rank 0] 2025-09-07 23:55:40,310 - mamba_training.training.distributed_trainer - INFO - Step 2200: loss=5.5787, lr=9.18e-05, grad_norm=1.3551
+[Rank 0] 2025-09-08 00:19:28,361 - mamba_training.training.distributed_trainer - INFO - Step 2300: loss=5.7486, lr=9.05e-05, grad_norm=1.0439
+[Rank 0] 2025-09-08 00:43:31,636 - mamba_training.training.distributed_trainer - INFO - Step 2400: loss=4.9037, lr=8.90e-05, grad_norm=0.8751
+[Rank 0] 2025-09-08 01:07:06,408 - mamba_training.training.distributed_trainer - INFO - Step 2500: loss=5.0988, lr=8.74e-05, grad_norm=0.8733
+[Rank 0] 2025-09-08 01:19:33,377 - mamba_training.training.distributed_trainer - INFO - Step 2500 validation: {'loss': 4.8835625648498535, 'perplexity': 132.10044860839844, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 01:32:20,139 - mamba_training.training.distributed_trainer - INFO - Saved checkpoint: outputs/checkpoint_epoch_0.pt
+[Rank 0] 2025-09-08 01:32:20,139 - mamba_training.training.distributed_trainer - INFO - Epoch 0: train_loss=6.8200, tokens/sec=8, val_loss=4.8827, val_ppl=131.99
+[Rank 0] 2025-09-08 01:55:51,273 - mamba_training.training.distributed_trainer - INFO - Step 2600: loss=6.1041, lr=8.58e-05, grad_norm=1.1337
+[Rank 0] 2025-09-08 02:19:42,907 - mamba_training.training.distributed_trainer - INFO - Step 2700: loss=5.8796, lr=8.41e-05, grad_norm=1.1211
+[Rank 0] 2025-09-08 02:42:30,210 - mamba_training.training.distributed_trainer - INFO - Step 2800: loss=5.7037, lr=8.23e-05, grad_norm=1.4623
+[Rank 0] 2025-09-08 03:06:00,237 - mamba_training.training.distributed_trainer - INFO - Step 2900: loss=4.8263, lr=8.04e-05, grad_norm=1.2485
+[Rank 0] 2025-09-08 03:29:52,837 - mamba_training.training.distributed_trainer - INFO - Step 3000: loss=6.4644, lr=7.84e-05, grad_norm=1.0549
+[Rank 0] 2025-09-08 03:42:09,596 - mamba_training.training.distributed_trainer - INFO - Step 3000 validation: {'loss': 4.755621910095215, 'perplexity': 116.23591613769531, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 04:05:01,523 - mamba_training.training.distributed_trainer - INFO - Step 3100: loss=5.9526, lr=7.64e-05, grad_norm=1.0596
+[Rank 0] 2025-09-08 04:28:31,479 - mamba_training.training.distributed_trainer - INFO - Step 3200: loss=5.8736, lr=7.43e-05, grad_norm=1.3258
+[Rank 0] 2025-09-08 04:51:58,008 - mamba_training.training.distributed_trainer - INFO - Step 3300: loss=4.1404, lr=7.22e-05, grad_norm=1.0063
+[Rank 0] 2025-09-08 05:14:47,859 - mamba_training.training.distributed_trainer - INFO - Step 3400: loss=4.5198, lr=7.00e-05, grad_norm=1.0019
+[Rank 0] 2025-09-08 05:37:56,178 - mamba_training.training.distributed_trainer - INFO - Step 3500: loss=5.9197, lr=6.78e-05, grad_norm=1.2044
+[Rank 0] 2025-09-08 05:50:26,305 - mamba_training.training.distributed_trainer - INFO - Step 3500 validation: {'loss': 4.659750461578369, 'perplexity': 105.60972595214844, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 06:13:49,336 - mamba_training.training.distributed_trainer - INFO - Step 3600: loss=5.5638, lr=6.55e-05, grad_norm=0.9160
+[Rank 0] 2025-09-08 06:36:40,419 - mamba_training.training.distributed_trainer - INFO - Step 3700: loss=4.8947, lr=6.32e-05, grad_norm=1.0394
+[Rank 0] 2025-09-08 06:59:52,990 - mamba_training.training.distributed_trainer - INFO - Step 3800: loss=5.3057, lr=6.09e-05, grad_norm=1.1091
+[Rank 0] 2025-09-08 07:22:47,893 - mamba_training.training.distributed_trainer - INFO - Step 3900: loss=4.7062, lr=5.85e-05, grad_norm=1.0428
+[Rank 0] 2025-09-08 07:46:22,167 - mamba_training.training.distributed_trainer - INFO - Step 4000: loss=4.3246, lr=5.61e-05, grad_norm=0.9604
+[Rank 0] 2025-09-08 07:58:25,526 - mamba_training.training.distributed_trainer - INFO - Step 4000 validation: {'loss': 4.598513126373291, 'perplexity': 99.33650207519531, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 08:21:45,905 - mamba_training.training.distributed_trainer - INFO - Step 4100: loss=6.1218, lr=5.37e-05, grad_norm=1.2577
+[Rank 0] 2025-09-08 08:44:51,860 - mamba_training.training.distributed_trainer - INFO - Step 4200: loss=5.4603, lr=5.13e-05, grad_norm=1.0158
+[Rank 0] 2025-09-08 09:07:58,506 - mamba_training.training.distributed_trainer - INFO - Step 4300: loss=4.7011, lr=4.89e-05, grad_norm=1.0081
+[Rank 0] 2025-09-08 09:31:21,509 - mamba_training.training.distributed_trainer - INFO - Step 4400: loss=5.0596, lr=4.65e-05, grad_norm=1.1703
+[Rank 0] 2025-09-08 09:54:03,564 - mamba_training.training.distributed_trainer - INFO - Step 4500: loss=4.8455, lr=4.41e-05, grad_norm=1.2226
+[Rank 0] 2025-09-08 10:06:13,221 - mamba_training.training.distributed_trainer - INFO - Step 4500 validation: {'loss': 4.539034366607666, 'perplexity': 93.60037231445312, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 10:30:38,090 - mamba_training.training.distributed_trainer - INFO - Step 4600: loss=5.2261, lr=4.17e-05, grad_norm=1.1580
+[Rank 0] 2025-09-08 10:54:07,861 - mamba_training.training.distributed_trainer - INFO - Step 4700: loss=4.8569, lr=3.93e-05, grad_norm=1.0865
+[Rank 0] 2025-09-08 11:17:03,002 - mamba_training.training.distributed_trainer - INFO - Step 4800: loss=5.3151, lr=3.69e-05, grad_norm=1.1040
+[Rank 0] 2025-09-08 11:40:57,452 - mamba_training.training.distributed_trainer - INFO - Step 4900: loss=5.4765, lr=3.46e-05, grad_norm=1.0972
+[Rank 0] 2025-09-08 12:03:56,461 - mamba_training.training.distributed_trainer - INFO - Step 5000: loss=5.1188, lr=3.24e-05, grad_norm=1.0702
+[Rank 0] 2025-09-08 12:15:55,359 - mamba_training.training.distributed_trainer - INFO - Step 5000 validation: {'loss': 4.506443500518799, 'perplexity': 90.59902954101562, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 12:29:25,058 - mamba_training.training.distributed_trainer - INFO - Saved checkpoint: outputs/checkpoint_epoch_1.pt
+[Rank 0] 2025-09-08 12:29:25,058 - mamba_training.training.distributed_trainer - INFO - Epoch 1: train_loss=5.1248, tokens/sec=8, val_loss=4.5014, val_ppl=90.15
+[Rank 0] 2025-09-08 12:51:14,320 - mamba_training.training.distributed_trainer - INFO - Step 5100: loss=5.2631, lr=3.01e-05, grad_norm=1.1092
+[Rank 0] 2025-09-08 13:14:34,737 - mamba_training.training.distributed_trainer - INFO - Step 5200: loss=3.7048, lr=2.79e-05, grad_norm=1.1898
+[Rank 0] 2025-09-08 13:38:14,125 - mamba_training.training.distributed_trainer - INFO - Step 5300: loss=4.9276, lr=2.58e-05, grad_norm=0.9702
+[Rank 0] 2025-09-08 14:01:51,840 - mamba_training.training.distributed_trainer - INFO - Step 5400: loss=4.4272, lr=2.37e-05, grad_norm=1.2026
+[Rank 0] 2025-09-08 14:25:31,611 - mamba_training.training.distributed_trainer - INFO - Step 5500: loss=5.1755, lr=2.17e-05, grad_norm=1.0496
+[Rank 0] 2025-09-08 14:37:41,300 - mamba_training.training.distributed_trainer - INFO - Step 5500 validation: {'loss': 4.477553367614746, 'perplexity': 88.01905822753906, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 15:01:14,875 - mamba_training.training.distributed_trainer - INFO - Step 5600: loss=5.0102, lr=1.97e-05, grad_norm=1.0600
+[Rank 0] 2025-09-08 15:23:49,771 - mamba_training.training.distributed_trainer - INFO - Step 5700: loss=5.3247, lr=1.78e-05, grad_norm=1.0994
+[Rank 0] 2025-09-08 15:47:21,167 - mamba_training.training.distributed_trainer - INFO - Step 5800: loss=5.5492, lr=1.60e-05, grad_norm=1.1115
+[Rank 0] 2025-09-08 16:10:36,402 - mamba_training.training.distributed_trainer - INFO - Step 5900: loss=4.7206, lr=1.43e-05, grad_norm=0.9708
+[Rank 0] 2025-09-08 16:33:33,986 - mamba_training.training.distributed_trainer - INFO - Step 6000: loss=4.6681, lr=1.26e-05, grad_norm=1.1661
+[Rank 0] 2025-09-08 16:45:54,026 - mamba_training.training.distributed_trainer - INFO - Step 6000 validation: {'loss': 4.4597344398498535, 'perplexity': 86.46454620361328, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 17:09:08,093 - mamba_training.training.distributed_trainer - INFO - Step 6100: loss=5.5000, lr=1.11e-05, grad_norm=0.9116
+[Rank 0] 2025-09-08 17:32:15,005 - mamba_training.training.distributed_trainer - INFO - Step 6200: loss=5.0635, lr=9.62e-06, grad_norm=1.0700
+[Rank 0] 2025-09-08 17:55:01,896 - mamba_training.training.distributed_trainer - INFO - Step 6300: loss=4.1751, lr=8.24e-06, grad_norm=1.0703
+[Rank 0] 2025-09-08 18:18:46,945 - mamba_training.training.distributed_trainer - INFO - Step 6400: loss=4.1841, lr=6.96e-06, grad_norm=1.0405
+[Rank 0] 2025-09-08 18:41:52,046 - mamba_training.training.distributed_trainer - INFO - Step 6500: loss=4.1842, lr=5.78e-06, grad_norm=1.0422
+[Rank 0] 2025-09-08 18:53:59,591 - mamba_training.training.distributed_trainer - INFO - Step 6500 validation: {'loss': 4.451397895812988, 'perplexity': 85.7467269897461, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 19:17:07,111 - mamba_training.training.distributed_trainer - INFO - Step 6600: loss=5.4678, lr=4.71e-06, grad_norm=0.9611
+[Rank 0] 2025-09-08 19:40:22,225 - mamba_training.training.distributed_trainer - INFO - Step 6700: loss=4.3794, lr=3.74e-06, grad_norm=0.9400
+[Rank 0] 2025-09-08 20:03:20,011 - mamba_training.training.distributed_trainer - INFO - Step 6800: loss=5.8970, lr=2.88e-06, grad_norm=0.8946
+[Rank 0] 2025-09-08 20:27:36,510 - mamba_training.training.distributed_trainer - INFO - Step 6900: loss=5.7918, lr=2.13e-06, grad_norm=0.9900
+[Rank 0] 2025-09-08 20:50:47,153 - mamba_training.training.distributed_trainer - INFO - Step 7000: loss=5.4224, lr=1.49e-06, grad_norm=0.8563
+[Rank 0] 2025-09-08 21:03:17,482 - mamba_training.training.distributed_trainer - INFO - Step 7000 validation: {'loss': 4.447939872741699, 'perplexity': 85.45072174072266, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 21:26:19,075 - mamba_training.training.distributed_trainer - INFO - Step 7100: loss=3.6936, lr=9.58e-07, grad_norm=0.9253
+[Rank 0] 2025-09-08 21:50:07,861 - mamba_training.training.distributed_trainer - INFO - Step 7200: loss=5.3983, lr=5.45e-07, grad_norm=0.9668
+[Rank 0] 2025-09-08 22:13:15,321 - mamba_training.training.distributed_trainer - INFO - Step 7300: loss=6.0795, lr=2.47e-07, grad_norm=0.9386
+[Rank 0] 2025-09-08 22:35:23,689 - mamba_training.training.distributed_trainer - INFO - Step 7400: loss=4.7918, lr=6.55e-08, grad_norm=0.9269
+[Rank 0] 2025-09-08 22:58:21,919 - mamba_training.training.distributed_trainer - INFO - Step 7500: loss=4.1079, lr=2.10e-10, grad_norm=0.9817
+[Rank 0] 2025-09-08 23:10:28,813 - mamba_training.training.distributed_trainer - INFO - Step 7500 validation: {'loss': 4.447068214416504, 'perplexity': 85.37627410888672, 'num_batches': 28049, 'is_best': True}
+[Rank 0] 2025-09-08 23:24:01,502 - mamba_training.training.distributed_trainer - INFO - Saved checkpoint: outputs/checkpoint_epoch_2.pt
+[Rank 0] 2025-09-08 23:24:01,502 - mamba_training.training.distributed_trainer - INFO - Epoch 2: train_loss=4.9041, tokens/sec=8, val_loss=4.4471, val_ppl=85.38
+[Rank 0] 2025-09-08 23:24:01,781 - mamba_training.training.distributed_trainer - INFO - Saved checkpoint: outputs/final_checkpoint.pt
+[Rank 0] 2025-09-08 23:24:01,781 - mamba_training.training.distributed_trainer - INFO - Training completed in 118220.30 seconds
+[Rank 0] 2025-09-08 23:24:01,781 - root - INFO - Training completed successfully!
+[Rank 0] 2025-09-08 23:24:01,781 - root - INFO - Final results: {'total_time': 118220.29957604408, 'final_metrics': {'epoch': 2, 'train': {'loss': 4.904144287109375, 'tokens_per_second': 7.651252746582031, 'epoch_time': 38554.25626564026, 'num_batches': 2502}, 'val': {'loss': 4.447068214416504, 'perplexity': 85.37627410888672, 'num_batches': 28049, 'is_best': True}, 'global_step': 7506}, 'training_history': [{'epoch': 0, 'train': {'loss': 6.819974422454834, 'tokens_per_second': 7.601409435272217, 'epoch_time': 38784.74619269371, 'num_batches': 2502}, 'val': {'loss': 4.882691383361816, 'perplexity': 131.98541259765625, 'num_batches': 28049, 'is_best': True}, 'global_step': 2502}, {'epoch': 1, 'train': {'loss': 5.124836444854736, 'tokens_per_second': 7.607297897338867, 'epoch_time': 38678.926938295364, 'num_batches': 2502}, 'val': {'loss': 4.501422882080078, 'perplexity': 90.14530944824219, 'num_batches': 28049, 'is_best': True}, 'global_step': 5004}, {'epoch': 2, 'train': {'loss': 4.904144287109375, 'tokens_per_second': 7.651252746582031, 'epoch_time': 38554.25626564026, 'num_batches': 2502}, 'val': {'loss': 4.447068214416504, 'perplexity': 85.37627410888672, 'num_batches': 28049, 'is_best': True}, 'global_step': 7506}]}
+[Rank 0] 2025-09-08 23:24:01,782 - root - INFO - Saved training results to: outputs/p100_training/training_results.json

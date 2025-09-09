@@ -1,0 +1,33 @@
+data:
+  dataset_path: data/train.txt
+  max_seq_length: 128
+  num_workers: 4
+  preprocessing_batch_size: 1000
+  shuffle_data: true
+  tokenizer_path: gpt2
+  train_split: 0.9
+  val_split: 0.1
+experiment_name: p100_training
+log_level: INFO
+model:
+  d_conv: 4
+  d_model: 256
+  d_state: 8
+  expand: 2
+  n_layers: 6
+  pad_token_id: 50256
+  vocab_size: 50257
+output_dir: outputs
+seed: 42
+training:
+  batch_size: 1
+  eval_steps: 500
+  gradient_accumulation_steps: 64
+  gradient_checkpointing: true
+  learning_rate: 0.0001
+  max_grad_norm: 1.0
+  num_epochs: 3
+  save_steps: 1000
+  use_mixed_precision: true
+  warmup_steps: 1000
+  weight_decay: 0.1
